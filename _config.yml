@@ -1,0 +1,45 @@
+# Site Settings
+title: "Carol Musyoka"
+description: "Senior Android Engineer — building fast, offline-first, user-centered apps."
+url: "https://carolinemusyoka.github.io"
+baseurl: "/portfolio"
+email: carolmusyoka127@gmail.com
+favicon: /assets/images/favicon.ico
+
+# Author
+author:
+  name: Carol Musyoka
+  bio: "Senior Android Engineer, multiplatform builder, and clean architecture advocate."
+  avatar: /assets/images/avatar.png
+  email: carolmusyoka127@gmail.com
+  social:
+    twitter: https://twitter.com/carolmusyoka_
+    github: https://github.com/carolinemusyoka
+    linkedin: https://www.linkedin.com/in/carol-musyoka/
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+include: ["_pages"]
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Defaults
+defaults:
+  - scope:
+      path: "_pages"
+    values:
+      layout: default
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
