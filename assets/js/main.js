@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const typedEl = document.getElementById('pf-typed');
   if (typedEl) {
     const phrases = [
-      'Hello',
-      'Kotlin lover',
-      'Building for Android',
-      'Shipping to Play Store'
+      'Hello Hello',
+      'I love Kotlin',
+      'I have been building for Android and Cross-platform',
+      'Shipping to Play Store as well'
     ];
     let phraseIdx = 0;
     let charIdx = 0;
