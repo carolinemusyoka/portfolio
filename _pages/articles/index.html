@@ -1,0 +1,72 @@
+---
+layout: default
+title: "Tech Articles"
+permalink: /articles/
+body_class: portfolio-page article-list-page
+---
+
+<section class="pf-article-list-hero">
+  <div class="pf-article-list-inner">
+    <a href="{{ '/' | relative_url }}" class="pd-back">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Back to Portfolio
+    </a>
+    <div class="pf-section-header pf-section-header-centered">
+      <span class="pf-section-label">THOUGHTS &amp; NOTES</span>
+      <h1 class="pf-section-title pf-section-title-lg">TECH ARTICLES</h1>
+      <svg class="pf-arrow-section" width="120" height="50"><use href="#arrow-zigzag"/></svg>
+      <p class="pf-section-subtitle">A few essays on product, Android, and modern product engineering.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pf-article-list">
+  <div class="pf-article-list-inner">
+    <div class="pf-articles-grid">
+      <article class="pf-article-card pf-card-animate">
+        <a href="{{ '/articles/designing-resilient-mobile-products/' | relative_url }}" class="pf-article-image">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="NFC and payment system hardware and app design" loading="lazy">
+        </a>
+        <div class="pf-article-body">
+          <div class="pf-article-meta">
+            <span class="pf-article-tag">PAYMENTS</span>
+            <span class="pf-article-date">May 2026</span>
+          </div>
+          <h3>Designing resilient mobile products for real-world payment flows</h3>
+          <p>From NFC tap-to-pay to weak signal recovery, payment products live or die on reliability. Here’s how I design for trust, security, and smooth failure recovery.</p>
+          <a href="{{ '/articles/designing-resilient-mobile-products/' | relative_url }}" class="pf-article-link">Read article</a>
+        </div>
+      </article>
+
+      <article class="pf-article-card pf-card-animate">
+        <a href="{{ '/articles/why-offline-first-matters/' | relative_url }}" class="pf-article-image">
+          <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=900&q=80" alt="Offline-first fintech app workflow" loading="lazy">
+        </a>
+        <div class="pf-article-body">
+          <div class="pf-article-meta">
+            <span class="pf-article-tag">TOOLS</span>
+            <span class="pf-article-date">April 2026</span>
+          </div>
+          <h3>Why offline-first matters when building fintech and POS tools</h3>
+          <p>Payment, merchant, and field operations tools need to keep working even when the network is weak. Offline-first design is what keeps critical workflows moving.</p>
+          <a href="{{ '/articles/why-offline-first-matters/' | relative_url }}" class="pf-article-link">Read article</a>
+        </div>
+      </article>
+
+      <article class="pf-article-card pf-card-animate">
+        <a href="{{ '/articles/working-better-with-android-architecture/' | relative_url }}" class="pf-article-image">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80" alt="Android architecture and developer tooling" loading="lazy">
+        </a>
+        <div class="pf-article-body">
+          <div class="pf-article-meta">
+            <span class="pf-article-tag">ENGINEERING</span>
+            <span class="pf-article-date">March 2026</span>
+          </div>
+          <h3>Working better with Android architecture, NFC, and hardware integrations</h3>
+          <p>Good architecture makes it easier to connect Kotlin, Compose, BLE, NFC, and device integrations without creating brittle app logic that breaks under pressure.</p>
+          <a href="{{ '/articles/working-better-with-android-architecture/' | relative_url }}" class="pf-article-link">Read article</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

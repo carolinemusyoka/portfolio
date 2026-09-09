@@ -1,0 +1,47 @@
+---
+layout: default
+title: "Designing resilient mobile products for real-world conditions"
+permalink: /articles/designing-resilient-mobile-products/
+body_class: portfolio-page article-detail-page
+---
+
+<section class="pf-article-post">
+  <div class="pf-article-post-inner">
+    <a href="{{ '/articles/' | relative_url }}" class="pd-back">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Back to Articles
+    </a>
+
+    <header class="pf-article-header">
+      <div class="pf-article-kicker">PAYMENTS</div>
+      <h1>Designing resilient mobile products for real-world payment flows</h1>
+      <div class="pf-article-meta-row">
+        <span>May 2026</span>
+        <span>5 minute read</span>
+      </div>
+    </header>
+
+    <img class="pf-article-cover" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80" alt="Payment and NFC mobile product design preview">
+
+    <div class="pf-article-content">
+      <p>Payment products are some of the most unforgiving mobile experiences to design. A tap can fail, a network call can drop, a POS terminal can disconnect, or a device can be low on battery. In all of these cases, the product still has to feel dependable.</p>
+      <p>That is why resilience matters so much in fintech and merchant tooling. A payment app is not just a UI; it is part of a transaction flow that carries trust, timing, and real user money. Reliability has to be built into the product from the beginning.</p>
+
+      <h2>Build for uncertainty</h2>
+      <p>People do not use payment apps in perfect conditions. They may be on unstable mobile data, using a device with a weak battery, or relying on a Bluetooth or NFC connection that glitches at the worst possible time. Good product design starts by accepting that reality and planning for it.</p>
+      <p>That means designing graceful recovery states, preserving transaction drafts, and showing clear merchant or customer-facing feedback when a tap, sync, or local validation step fails. The goal is not to eliminate all friction; it is to make failure feel understandable and recoverable.</p>
+
+      <h2>Reliability is part of the product experience</h2>
+      <p>When a payment flow works smoothly, users trust it more. When it fails without explanation, trust erodes immediately. That is why offline-first patterns, smart retries, and careful state handling are not just engineering details — they are product decisions.</p>
+      <p>For card readers, NFC terminals, or mobile money tooling, the user often needs the app to remain usable even when connectivity is inconsistent. In those moments, the app has to feel calm, explicit, and safe.</p>
+
+      <h2>Keep the core transaction path strong</h2>
+      <p>Not every feature needs to be available at every moment, but the critical path has to be. A user should be able to confirm a payment, review a recent transaction, or retry a failed interaction without losing confidence in the product.</p>
+      <p>This is where architecture, device firmware integration, and mobile UX all meet. Clean boundaries and dependable state handling create better outcomes when the system gets noisy, busy, or constrained.</p>
+
+      <blockquote>Great payment experiences do not just look polished. They keep working when the environment is imperfect.</blockquote>
+
+      <p>At the end of the day, resilient product design is about respect: respect for user time, device constraints, and the stakes of real money movement. When we design that way, trust grows naturally.</p>
+    </div>
+  </div>
+</section>

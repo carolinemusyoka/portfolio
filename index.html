@@ -5,32 +5,7 @@ permalink: /
 body_class: portfolio-page
 ---
 
-<<<<<<< Updated upstream
 <!-- Hand-drawn arrow SVG defs (reusable) -->
-=======
-</head>
-<body class="portfolio-page">
-  <header class="site-header" id="site-header">
-  <nav class="nav-container">
-    <a href="/portfolio/" class="nav-logo">CM</a>
-    <ul class="nav-links">
-      <li><a href="/portfolio/">Home</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="https://carolinemusyoka.github.io">Travel Blog</a></li>
-      <li><a href="mailto:carolmusyoka127@gmail.com">Contact</a></li>
-    </ul>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
-</header>
-
-
-  <main>
-    <!-- Hand-drawn arrow SVG defs (reusable) -->
->>>>>>> Stashed changes
 <svg class="pf-arrow-defs" xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;">
   <defs>
     <symbol id="arrow-curve-right" viewBox="0 0 120 60">
@@ -373,6 +348,65 @@ body_class: portfolio-page
     </article>
 
 
+  </div>
+</section>
+
+<!-- Tech Articles -->
+<section class="pf-articles-section">
+  <div class="pf-articles-inner">
+    <div class="pf-section-header pf-section-header-centered">
+      <span class="pf-section-label">THOUGHTS &amp; NOTES</span>
+      <h2 class="pf-section-title pf-section-title-lg">TECH ARTICLES</h2>
+      <svg class="pf-arrow-section" width="120" height="50"><use href="#arrow-zigzag"/></svg>
+      <p class="pf-section-subtitle">A few notes from product, mobile, and engineering work.</p>
+    </div>
+
+    <div class="pf-articles-grid">
+      <article class="pf-article-card pf-card-animate">
+        <a href="{{ '/articles/designing-resilient-mobile-products/' | relative_url }}" class="pf-article-image">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Mobile app screens and device design" loading="lazy">
+        </a>
+        <div class="pf-article-body">
+          <div class="pf-article-meta">
+            <span class="pf-article-tag">MOBILE</span>
+            <span class="pf-article-date">May 2026</span>
+          </div>
+          <h3>Designing resilient mobile products for real-world conditions</h3>
+          <p>From flaky networks to battery-saving constraints, the best mobile products are built for uncertainty. Here’s how I think about reliability and user trust.</p>
+          <a href="{{ '/articles/designing-resilient-mobile-products/' | relative_url }}" class="pf-article-link">Read article</a>
+        </div>
+      </article>
+
+      <article class="pf-article-card pf-card-animate">
+        <a href="{{ '/articles/why-offline-first-matters/' | relative_url }}" class="pf-article-image">
+          <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=900&q=80" alt="Laptop and smartphone on a desk" loading="lazy">
+        </a>
+        <div class="pf-article-body">
+          <div class="pf-article-meta">
+            <span class="pf-article-tag">PRODUCT</span>
+            <span class="pf-article-date">April 2026</span>
+          </div>
+          <h3>Why offline-first matters in emerging market products</h3>
+          <p>Fast and seamless experiences mean nothing if they fall apart when connectivity does. Offline-first design is a practical way to build more humane products.</p>
+          <a href="{{ '/articles/why-offline-first-matters/' | relative_url }}" class="pf-article-link">Read article</a>
+        </div>
+      </article>
+
+      <article class="pf-article-card pf-card-animate">
+        <a href="{{ '/articles/working-better-with-android-architecture/' | relative_url }}" class="pf-article-image">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80" alt="Developer workspace and code on a screen" loading="lazy">
+        </a>
+        <div class="pf-article-body">
+          <div class="pf-article-meta">
+            <span class="pf-article-tag">ENGINEERING</span>
+            <span class="pf-article-date">March 2026</span>
+          </div>
+          <h3>Working better with Android architecture and clean boundaries</h3>
+          <p>Good architecture is not about complexity for its own sake. It is about making change safer, faster, and easier to reason about as products scale.</p>
+          <a href="{{ '/articles/working-better-with-android-architecture/' | relative_url }}" class="pf-article-link">Read article</a>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 

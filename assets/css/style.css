@@ -1528,6 +1528,240 @@ img {
 }
 
 /* ===================================
+   Tech Articles
+   =================================== */
+.pf-articles-section {
+  padding: 5rem 0 2rem;
+  background: #f8f8f8;
+}
+
+.pf-articles-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.pf-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.pf-article-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.pf-article-card:hover {
+  transform: translateY(-6px);
+  border-color: #1a1a1a;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+}
+
+.pf-article-image {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background: #efefef;
+}
+
+.pf-article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.pf-article-card:hover .pf-article-image img {
+  transform: scale(1.03);
+}
+
+.pf-article-body {
+  padding: 1.5rem 1.5rem 1.75rem;
+}
+
+.pf-article-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.pf-article-tag,
+.pf-article-date {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pf-article-tag {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.pf-article-date {
+  color: #777;
+}
+
+.pf-article-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.25;
+  color: #111;
+  margin-bottom: 0.75rem;
+}
+
+.pf-article-card p {
+  color: #555;
+  font-size: 0.92rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.pf-article-link {
+  color: #111;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.pf-article-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: #111;
+  transform-origin: left;
+  transform: scaleX(1);
+  transition: transform 0.25s ease;
+}
+
+.pf-article-link:hover::after {
+  transform: scaleX(0.6);
+}
+
+.pf-article-list-hero,
+.pf-article-post {
+  background: #f9f9f9;
+  padding: 7rem 0 2rem;
+}
+
+.pf-article-list-inner,
+.pf-article-post-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.pf-article-post-inner {
+  max-width: 860px;
+}
+
+.pf-article-header {
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.pf-article-kicker {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #555;
+  border: 1px solid #d5d5d5;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.pf-article-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  color: #111;
+  margin: 0;
+}
+
+.pf-article-meta-row {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.pf-article-cover {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  border-radius: 22px;
+  display: block;
+  margin: 0 auto 2.5rem;
+  border: 1px solid #e7e7e7;
+}
+
+.pf-article-content {
+  color: #2f2f2f;
+  font-size: 1.05rem;
+  line-height: 1.95;
+}
+
+.pf-article-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2vw, 2.3rem);
+  margin: 2.5rem 0 1rem;
+  color: #111;
+}
+
+.pf-article-content p {
+  margin-bottom: 1.25rem;
+}
+
+.pf-article-content blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem 1.75rem;
+  border-left: 4px solid #111;
+  background: #f4f4f4;
+  color: #111;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .pf-articles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .pf-article-meta-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pf-article-content {
+    font-size: 0.98rem;
+  }
+}
+
+/* ===================================
    Enhanced Artsy Animations
    =================================== */
 
