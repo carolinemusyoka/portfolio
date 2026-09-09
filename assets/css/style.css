@@ -1652,6 +1652,12 @@ img {
   transform: scaleX(0.6);
 }
 
+.pf-articles-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
 .pf-article-list-hero,
 .pf-article-post {
   background: #f9f9f9;
