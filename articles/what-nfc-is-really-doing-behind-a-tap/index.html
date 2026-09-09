@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What NFC is really doing behind a tap — Carol Musyoka</title>
+  <meta name="description" content="Senior Android Engineer — building fast, offline-first, user-centered apps.">
+  <link rel="icon" href="/portfolio/assets/images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/portfolio/assets/css/style.css">
+  <link type="application/atom+xml" rel="alternate" href="https://carolinemusyoka.github.io/portfolio/feed.xml" title="Carol Musyoka" />
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>What NFC is really doing behind a tap | Carol Musyoka</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="What NFC is really doing behind a tap" />
+<meta name="author" content="Carol Musyoka" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Senior Android Engineer — building fast, offline-first, user-centered apps." />
+<meta name="twitter:description" property="og:description" content="Senior Android Engineer — building fast, offline-first, user-centered apps." />
+<link rel="canonical" href="https://carolinemusyoka.github.io/portfolio/articles/what-nfc-is-really-doing-behind-a-tap/" />
+<meta property="og:url" content="https://carolinemusyoka.github.io/portfolio/articles/what-nfc-is-really-doing-behind-a-tap/" />
+<meta property="og:site_name" content="Carol Musyoka" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="What NFC is really doing behind a tap" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Carol Musyoka"},"description":"Senior Android Engineer — building fast, offline-first, user-centered apps.","headline":"What NFC is really doing behind a tap","url":"https://carolinemusyoka.github.io/portfolio/articles/what-nfc-is-really-doing-behind-a-tap/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body class="portfolio-page article-detail-page">
+  <header class="site-header" id="site-header">
+  <nav class="nav-container">
+    <a href="/portfolio/" class="nav-logo">CM</a>
+    <ul class="nav-links">
+      <li><a href="/portfolio/">Home</a></li>
+      <li><a href="/portfolio/projects/">Projects</a></li>
+      <li><a href="/portfolio/articles/">Articles</a></li>
+      <li><a href="https://carolinemusyoka.github.io">Travel Blog</a></li>
+      <li><a href="mailto:carolmusyoka127@gmail.com">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+
+  <main>
+    <section class="pf-article-post">
+  <div class="pf-article-post-inner">
+    <a href="/portfolio/articles/" class="pd-back">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Back to Articles
+    </a>
+
+    <header class="pf-article-header">
+      <div class="pf-article-kicker">SECURITY</div>
+      <h1>What NFC is really doing behind a tap</h1>
+      <div class="pf-article-meta-row">
+        <span>September 2026</span>
+        <span>8 minute read</span>
+      </div>
+    </header>
+
+    <img class="pf-article-cover" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1400&q=80" alt="NFC interaction and tap-based mobile payment security">
+
+    <div class="pf-article-content">
+      <p>People do not usually think about NFC as a security system. They think of it as the reason their phone can tap a terminal and pay for a coffee. But beneath that playful moment is a set of design decisions meant to reduce risk, control exposure, and make the interaction intentional.</p>
+      <p>NFC is short range by design. That matters. It means the user has to be close to the reader, which makes accidental reads less likely and makes a tap feel more deliberate. In payment flows, that little bit of physical proximity is a huge part of the trust model.</p>
+
+      <h2>Short range is a security feature</h2>
+      <p>In many systems, the more distant the communication, the more likely it is to be intercepted or confused with another nearby device. NFC reduces that risk simply by keeping the interaction close. A user physically brings the phone near the terminal, and the connection is bounded by a tight distance.</p>
+      <p>That is helpful, but it is not the whole story. On modern devices, payment systems usually avoid sending raw card data directly over the air. Instead, they exchange tokens and cryptographic proof. The system is designed so that even if a malicious actor sees the interaction, it does not reveal the real card details or allow them to reuse the transaction.</p>
+      <p>That is why the secure element and trusted execution environment matter so much. They create a protected place where sensitive credentials can be stored and used without exposing them to arbitrary app logic.</p>
+
+      <h2>Why the experience feels instant</h2>
+      <p>Tap-to-pay feels instant because the system is designed to minimize steps and reduce user hesitation. But there is a lot packed into that moment. The device has to detect the reader, establish the connection, validate the token, confirm the transaction, and often hand control back to the app in a way that feels effortless.</p>
+      <p>For product teams, that means payment flows need to be careful about timing and state. The user expects a near-immediate result, but the app should also be tolerant of slow readers, invalid tags, and poor device conditions. Instant does not mean careless. It means the system is designed to be smooth without feeling magical.</p>
+
+      <h2>What many teams get wrong</h2>
+      <p>A common mistake is treating NFC as a simple “read a tag” event and then expecting the rest of the system to handle everything. In reality, a good NFC flow depends on how the app handles state before, during, and after the read. What if the tag is unreadable? What if the user taps too early or too late? What if the app is in the background? What if the terminal is not the expected one?</p>
+      <p>The solution is not to panic or pile on complexity. It is to model the product around the actual activity: when discovery starts, when a valid tag is detected, how the payload is validated, and what the user sees while the system confirms approval. That makes the flow predictable and much easier to trust.</p>
+
+      <h2>Android Kotlin example</h2>
+      <p>Here is a small Kotlin example showing how a screen can listen for an NFC tag and respond only when it is a valid device or payment payload.</p>
+
+      <pre><code>override fun onNewIntent(intent: Intent) {
+    super.onNewIntent(intent)
+
+    if (intent.action == NfcAdapter.ACTION_TAG_DISCOVERED) {
+        val tag = intent.getParcelableExtra&lt;Tag&gt;(NfcAdapter.EXTRA_TAG) ?: return
+        val ndef = Ndef.get(tag) ?: return
+
+        try {
+            ndef.connect()
+            val payload = ndef.cachedNdefMessage
+            val records = payload.records
+
+            records.forEach { record ->
+                val text = String(record.payload, Charsets.UTF_8)
+                if (text.contains("wallet")) {
+                    // Advance the payment flow
+                }
+            }
+        } catch (e: Exception) {
+            // Surface a user-friendly error
+        } finally {
+            try {
+                ndef.close()
+            } catch (_: Exception) {
+            }
+        }
+    }
+}</code></pre>
+
+      <p>This is intentionally basic, but the pattern is useful. It keeps the interaction narrow, controlled, and driven by an actual event. That is a better foundation than trying to scan for every device in the area and hoping the app can sort it out later.</p>
+
+      <blockquote>The trick with NFC is not that it is magical. The trick is that it is designed to be local, limited, and deliberate.</blockquote>
+
+      <p>When product teams respect that design, they create flows that are simpler for users and safer by default. That is what makes tap-based experiences feel reliable instead of fragile.</p>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Carol Musyoka</h4>
+      <p>Senior Android Engineer — building fast, offline-first, user-centered apps.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Links</h4>
+      <ul>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/portfolio/articles/">Articles</a></li>
+        <li><a href="https://carolinemusyoka.github.io">Travel Blog</a></li>
+        <li><a href="mailto:carolmusyoka127@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <div class="footer-social">
+        
+        <a href="https://twitter.com/carolmusyoka_" target="_blank" rel="noopener" aria-label="Twitter">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M17.5 4l-6.768 6.768"/></svg>
+        </a>
+        
+        
+        <a href="https://github.com/carolinemusyoka" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        
+        
+        <a href="https://www.linkedin.com/in/carol-musyoka/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Carol Musyoka. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script src="/portfolio/assets/js/main.js"></script>
+</body>
+</html>

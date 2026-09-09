@@ -1733,6 +1733,22 @@ img {
   margin-bottom: 1.25rem;
 }
 
+.pf-article-content pre {
+  margin: 2rem 0;
+  padding: 1.25rem 1.4rem;
+  overflow-x: auto;
+  background: #111827;
+  color: #e5e7eb;
+  border-radius: 16px;
+  border: 1px solid #dfe3ea;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.pf-article-content code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
 .pf-article-content blockquote {
   margin: 2rem 0;
   padding: 1.5rem 1.75rem;

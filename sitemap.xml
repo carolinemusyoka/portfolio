@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://carolinemusyoka.github.io/portfolio/articles/android-kotlin-nfc-and-bluetooth-in-real-products/</loc>
+</url>
+<url>
+<loc>https://carolinemusyoka.github.io/portfolio/articles/bluetooth-in-android-pos-and-device-workflows/</loc>
+</url>
+<url>
 <loc>https://carolinemusyoka.github.io/portfolio/projects/cascade/</loc>
 </url>
 <url>
 <loc>https://carolinemusyoka.github.io/portfolio/articles/designing-resilient-mobile-products/</loc>
+</url>
+<url>
+<loc>https://carolinemusyoka.github.io/portfolio/articles/how-payments-really-work-when-you-tap-your-phone/</loc>
 </url>
 <url>
 <loc>https://carolinemusyoka.github.io/portfolio/articles/</loc>
@@ -16,13 +25,22 @@
 <loc>https://carolinemusyoka.github.io/portfolio/projects/olpejeta/</loc>
 </url>
 <url>
+<loc>https://carolinemusyoka.github.io/portfolio/articles/queueing-retries-and-trust-in-payment-flows/</loc>
+</url>
+<url>
 <loc>https://carolinemusyoka.github.io/portfolio/projects/sokompare/</loc>
 </url>
 <url>
 <loc>https://carolinemusyoka.github.io/portfolio/projects/thamani/</loc>
 </url>
 <url>
+<loc>https://carolinemusyoka.github.io/portfolio/articles/what-nfc-is-really-doing-behind-a-tap/</loc>
+</url>
+<url>
 <loc>https://carolinemusyoka.github.io/portfolio/articles/why-offline-first-matters/</loc>
+</url>
+<url>
+<loc>https://carolinemusyoka.github.io/portfolio/articles/why-payment-apps-fail-when-the-network-is-weak/</loc>
 </url>
 <url>
 <loc>https://carolinemusyoka.github.io/portfolio/articles/working-better-with-android-architecture/</loc>
