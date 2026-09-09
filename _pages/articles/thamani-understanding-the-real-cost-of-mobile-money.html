@@ -1,0 +1,93 @@
+---
+layout: default
+title: "Thamani: understanding the real cost of mobile money"
+permalink: /articles/thamani-understanding-the-real-cost-of-mobile-money/
+body_class: portfolio-page article-detail-page
+---
+
+<section class="pf-article-post">
+  <div class="pf-article-post-inner">
+    <a href="{{ '/articles/' | relative_url }}" class="pd-back">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Back to Articles
+    </a>
+
+    <header class="pf-article-header">
+      <div class="pf-article-kicker">PROJECT WALKTHROUGH</div>
+      <h1>Thamani: understanding the real cost of mobile money</h1>
+      <div class="pf-article-meta-row">
+        <span>September 2026</span>
+        <span>10 minute read</span>
+      </div>
+    </header>
+
+    <img class="pf-article-cover" src="{{ '/assets/images/thamani_home.png' | relative_url }}" alt="Thamani home screen and mobile money fee tracking interface">
+
+    <div class="pf-article-content">
+      <p>Thamani started as a simple question: why do people keep paying so much to move their own money around, and why is that cost so hard to see?</p>
+      <p>In East Africa, mobile money is part of everyday life. People send money to family, pay bills, buy airtime, withdraw cash, and move money around for business with a few taps on a phone. It is fast, practical, and widely used. But the fee structure is not exactly the same across all providers. A person can make several transactions in a day and not really know how much they are spending in hidden charges.</p>
+      <p>That is the gap Thamani tries to close.</p>
+
+      <h2>What the product is really doing</h2>
+      <p>At a high level, Thamani is a transaction fee tracker. It reads financial SMS messages, extracts the meaningful pieces, and turns them into a clear picture of what a user is really paying. It shows the amount sent, the fee charged, the service provider, and the percentage being taken as a cost.</p>
+      <p>Financial SMS messages are not standardized across all providers. Some are short and clean. Others are wordy, inconsistent, or broken into multiple lines. A lot of the work is in making sense of messy real-world input and turning it into something useful.</p>
+      <p>The app is built around the idea that people should not have to become experts in fee structures just to understand their own money habits. The product is basically a translation layer between low-level financial messages and understandable user insight.</p>
+
+      <h2>The user problem</h2>
+      <p>For many people, mobile money is not a side activity. It is their main financial system. They move money for groceries, school fees, rent, business operations, and family support. Every transaction has a cost, but that cost is often buried inside an SMS that is easy to ignore.</p>
+      <p>Someone may think, “I sent KES 5,000 and got charged KES 35.” That feels small in isolation. But across 30 or 50 transactions in a month, those small fees become a meaningful amount. If you are making daily payments for a business, those fees can become a serious operating cost.</p>
+      <p>Thamani helps take the invisible part and make it visible.</p>
+
+      <h2>How the app works in practice</h2>
+      <p>The core flow is straightforward. The app reads the SMS notifications from providers like M-Pesa and Airtel Money, parses out amounts and fees, and then organizes the data into transaction records. From there, it can calculate totals, summaries, monthly trends, and provider comparisons.</p>
+      <p>That means the app is converting raw financial messages into structured data that can be analyzed.</p>
+      <p>The app also has a calculator flow, which helps users estimate how much a transaction would cost before they send it. That feature is useful because the real value of the product is not only in reflection. It is also in helping people make better decisions before they transact.</p>
+
+      <h2>Why SMS parsing is the hardest part</h2>
+      <p>One of the most important things I learned building Thamani is that the product is really a rules engine. The actual application logic depends on understanding how different providers send messages and how those messages change over time.</p>
+      <p>You may think the user is just reading a message like "You have sent KES 2,000 to X. Charges: KES 20." In reality, the exact wording, ordering, punctuation, and format vary. Some messages include extra data.</p>
+      <p>That is where the engineering challenge sits. The app needs to normalize different patterns without breaking the product for users.</p>
+      <p>Over time, even the same provider can change wording or adjust how charges are displayed. That means a parser that works today might need adjusting tomorrow. In a product like this, correctness is part of the user experience.</p>
+
+      <h2>Context and visualization</h2>
+      <p>The value of Thamani becomes much clearer once you see the dashboard and transaction detail screens. The user is not just browsing a list of transfers. They are seeing the real cost behind each action.</p>
+      <p>For example, a transaction log might show an amount and a fee. A useful product goes one step further and explains the fee as a percentage. It tells the user whether the cost was high or low relative to the amount sent. It also aggregates patterns over time so the user can see which provider is more expensive for specific kinds of payments.</p>
+      <p>That is the difference between raw data and product insight.</p>
+
+      <img class="pf-article-cover" src="{{ '/assets/images/thamani_transactions.png' | relative_url }}" alt="Thamani transaction history showing mobile money cost tracking">
+
+      <p>When a user sees a month total, they start to think differently. A KES 20 fee is no longer a random line item. It becomes part of the cost of using a certain channel. They can compare providers and begin to make better choices.</p>
+
+      <h2>Privacy was part of the design from day one</h2>
+      <p>Thamani is built to keep financial data local. It does not depend on sending SMS transactions to a remote backend. That matters because the app is dealing with highly personal financial activity.</p>
+      <p>Privacy is important. People are often reluctant to upload their transaction history to a cloud service. There is a trust barrier there, and rightfully so.</p>
+      <p>By keeping the data on device, the app reduces the risk and keeps the product more comfortable to use. It also makes the app more resilient in places where connectivity is poor or unreliable, which is a real advantage in low-bandwidth environments.</p>
+
+      <h2>Why tax and fee rules keep shifting</h2>
+      <p>This is one of the biggest real-world issues in a product like Thamani: the rules are not fixed.</p>
+      <p>Providers change fee structures. Taxes get added or updated. Message formats evolve. A rule that was correct last month might be partially wrong this month. That creates a problem for apps built around parsing financial messages, because the output is only as accurate as the rules behind it.</p>
+      <p>At first, the app had a lot of hardcoded logic. That was manageable when the set of providers and rule variations was smaller. But as the product grows, hardcoded rules become a maintenance issue. Every change needs a release, and every release carries the risk of stale logic or broken parsing for some users.</p>
+      <p>That is why moving logic into remote configuration is such an important product decision.</p>
+
+      <h2>Remote config as a product strategy</h2>
+      <p>Remote config is deeply useful in a system like this. It lets the app fetch updated parsing rules, tax updates, and provider metadata without requiring a full app update every time the rules change.</p>
+      <p>That is critical because the product depends on accuracy. A stale tax rule or outdated provider pattern directly impacts the user’s trust in the app. If the app is telling them the wrong cost for a payment, it stops being helpful.</p>
+      <p>Instead of waiting for a release cycle, the system can be updated more quickly. That makes the product more resilient and less brittle in the face of constant market change.</p>
+      <p>It is also a better product culture decision. The product becomes less dependent on “ship a new version and hope the issue is fixed.” It becomes a live system that can change as the environment changes.</p>
+
+      <img class="pf-article-cover" src="{{ '/assets/images/thamani_analytics.png' | relative_url }}" alt="Thamani analytics view showing fee trends and monthly summaries">
+
+      <h2>What is coming next</h2>
+      <p>One clear next step is adding support for Tkash. That is not a simple additive feature. It is another provider with another message structure and another set of business rules. The challenge is making sure the product remains trustworthy while expanding coverage.</p>
+      <p>Before shipping that, it has to be tested against real transaction examples, validate the math, and confirm the summaries still reflect real usage fairly.</p>
+    
+
+      <h2>The product lesson</h2>
+      <p>Thamani is a good example of how useful product work often happens at the intersection of personal behavior, data quality, and operational clarity.</p>
+      <p>The value is not in showing a fancy dashboard. The value is in making hidden costs visible enough that people can act on them. That is a very practical form of product thinking. It is less about sophisticated features and more about helping people understand the real cost of everyday decisions.</p>
+    
+
+      <p>That is what Thamani has been trying to do, and that is why it still matters.</p>
+    </div>
+  </div>
+</section>

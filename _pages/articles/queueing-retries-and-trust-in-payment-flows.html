@@ -16,7 +16,7 @@ body_class: portfolio-page article-detail-page
       <div class="pf-article-kicker">PRODUCT</div>
       <h1>Queueing retries and trust in payment flows</h1>
       <div class="pf-article-meta-row">
-        <span>September 2026</span>
+        <span>November 2025</span>
         <span>7 minute read</span>
       </div>
     </header>
@@ -25,15 +25,15 @@ body_class: portfolio-page article-detail-page
 
     <div class="pf-article-content">
       <p>Every payment product eventually has to deal with retries. A request can fail because the network dropped, the device moved, the server timed out, or the app lost the user’s focus mid-flow. The important question is not whether retries happen. It is how the system handles them without damaging trust.</p>
-      <p>There is a difference between a retry that is clearly safe and a retry that feels reckless. A product that automatically retries without checking state can create duplicate transactions or make the user think the original action succeeded when it did not. That is the kind of issue that destroys confidence fast.</p>
+      <p>There is a difference between a retry that is clearly safe and a retry that feels reckless. A product that automatically retries without checking state can create duplicate transactions or make the user think the original action succeeded when it did not.</p>
 
       <h2>The product should know what is queued</h2>
-      <p>When a payment is queued locally, the app should keep enough context to understand what happened, what is still pending, and what the next valid action is. This is not an edge case. It is a normal production pattern in unreliable mobile environments.</p>
+      <p>When a payment is queued locally, the app should keep enough context to understand what happened, what is still pending, and what the next valid action is, which is a normal production pattern in unreliable mobile environments.</p>
       <p>A robust system can say, “this payment was created offline and is waiting to sync,” or “the request was sent but the confirmation is still pending,” or “the transaction failed locally and can be retried without creating a duplicate.” These messages matter because they reduce ambiguity and help users understand what is going on.</p>
 
       <h2>Retries are a product decision</h2>
       <p>One of the easiest ways to lose user trust is to let the app retry silently or aggressively without making the state visible. Users do not like being surprised. They do not like being told a payment succeeded when the service never confirmed it. They do not like guessing whether they should repeat the tap or wait.</p>
-      <p>Good retry logic is careful. It checks if a request was already sent. It uses idempotency keys where possible. It respects the user’s action history. It does not assume that a retry is harmless just because the tap was close. A payment operation is not the same as a simple data fetch. It has money involved, and money changes the design constraints.</p>
+      <p>Good retry logic checks if a request was already sent. It uses idempotency keys where possible. It respects the user’s action history. It does not assume that a retry is harmless just because the tap was close. A payment operation is not the same as a simple data fetch. It has money involved, and money changes the design constraints.</p>
 
       <h2>Clean state beats clever retries</h2>
       <p>Product teams are often tempted to build “smart” logic that retries aggressively and hopes for the best. This usually creates fragile behavior. The product becomes harder to reason about and easier to break under edge conditions.</p>
@@ -76,7 +76,7 @@ class PaymentViewModel : ViewModel() {
 
       <blockquote>Trust in payment products is built less by speed and more by clarity when things go wrong.</blockquote>
 
-      <p>When a system can explain where the transaction is, what is still pending, and how the user can recover, it feels dependable. That dependability is what makes people trust the product enough to keep using it in real life.</p>
+      <p>When a system can explain where the transaction is, what is still pending, and how the user can recover. This kind of dependability is important in every aspect.</p>
     </div>
   </div>
 </section>
