@@ -1,0 +1,55 @@
+---
+layout: default
+title: "How payments really work when you tap your phone"
+permalink: /articles/how-payments-really-work-when-you-tap-your-phone/
+body_class: portfolio-page article-detail-page
+---
+
+<section class="pf-article-post">
+  <div class="pf-article-post-inner">
+    <a href="{{ '/articles/' | relative_url }}" class="pd-back">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Back to Articles
+    </a>
+
+    <header class="pf-article-header">
+      <div class="pf-article-kicker">PAYMENTS</div>
+      <h1>How payments really work when you tap your phone</h1>
+      <div class="pf-article-meta-row">
+        <span>June 2026</span>
+        <span>7 minute read</span>
+      </div>
+    </header>
+
+    <img class="pf-article-cover" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1400&q=80" alt="Person holding a black Android smartphone during a contactless payment">
+
+    <div class="pf-article-content">
+      <p>Most people see a tap and assume the payment is simple. The phone touches a terminal, a little beep happens, and money moves. In reality, there are a few layers in between, and each one matters if you care about trust, security, and reliability.</p>
+      <p>For the end user, the experience feels instant. For the system behind it, there is a chain of checks, network calls, token exchange, and authorization logic happening in a few hundred milliseconds. That is why product teams need to understand the mechanics, not just the surface behaviour.</p>
+
+      <h2>What actually happens in a tap</h2>
+      <p>When your phone taps a payment terminal, the terminal is not reading your card details in some magical way. It is usually reading a token or a secure credential that has been issued to the wallet or card on the device.</p>
+      <p>That credential is often a digital representation of the card, backed by cryptography and a secure element or trusted platform component. The terminal gets a short-lived token and a cryptographic proof that the transaction is valid. That data is then sent to the payment network, which routes it to the issuer and the acquirer for approval.</p>
+      <p>So the app is not just “making a payment.” It is creating a secure, validated transaction record that can be checked, approved, and reconciled later.</p>
+
+      <h2>Why tokenization matters</h2>
+      <p>Tokenization changes the game. Instead of sending a raw card number across the air and across networks, the device and terminal exchange a token that is valid for a specific transaction or a limited set of contexts.</p>
+      <p>That reduces risk. If an attacker intercepts the message, they do not get the real card details. The system is designed so the token is useful only for the payment flow it is meant for.</p>
+      <p>This is one reason payment apps feel safer than older card flows. The security model is built around limited exposure, short-lived data, and verification rather than trusting a single device or a single network path.</p>
+
+      <h2>The network path still matters</h2>
+      <p>A payment may feel local because the tap is physical, but it is still a network-backed operation. The terminal sends the transaction to its processor, the processor routes it to the network, and the bank or issuer decides whether to approve it.</p>
+      <p>This means latency is not just a UX issue. It is a reliability and business issue. If the app cannot tell the difference between a slow network, a declined card, and a failed tap, users will get confused fast and lose trust in the flow.</p>
+      <p>Good product design separates those states clearly. The user should understand whether the transaction is pending, failed, or still being checked. Clear status is often the difference between a smooth transaction and a stressful one.</p>
+
+      <h2>Why this matters for product teams</h2>
+      <p>As engineers and product people, we sometimes treat payments like a black box. We build the UI, wire the gateway, and assume the rest is handled by the platform. That can work for a small integration, but it breaks down when edge cases show up.</p>
+      <p>What happens when the NFC tap is slow? What if the user retries after a timeout? What if the device loses connectivity after the tap but before the confirmation arrives? Those are product questions, not just technical ones.</p>
+      <p>To build a resilient payment experience, you need to know the real flow. You need to understand what the device can prove, what the terminal can verify, and what the network still needs to approve. That makes the product calmer and more dependable.</p>
+
+      <blockquote>Payment products feel simple to the user because the system is working quietly behind the scenes. If you understand the mechanics, you can build better experiences and fewer surprises.</blockquote>
+
+      <p>The more we understand how a tap becomes an approved transaction, the better we get at designing for trust, speed, and recovery. That is what separates a mediocre payment flow from one that people can rely on every day.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,82 @@
+---
+layout: default
+title: "Queueing retries and trust in payment flows"
+permalink: /articles/queueing-retries-and-trust-in-payment-flows/
+body_class: portfolio-page article-detail-page
+---
+
+<section class="pf-article-post">
+  <div class="pf-article-post-inner">
+    <a href="{{ '/articles/' | relative_url }}" class="pd-back">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Back to Articles
+    </a>
+
+    <header class="pf-article-header">
+      <div class="pf-article-kicker">PRODUCT</div>
+      <h1>Queueing retries and trust in payment flows</h1>
+      <div class="pf-article-meta-row">
+        <span>September 2026</span>
+        <span>7 minute read</span>
+      </div>
+    </header>
+
+    <img class="pf-article-cover" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80" alt="Queued payment actions and retry flow in a real transaction system">
+
+    <div class="pf-article-content">
+      <p>Every payment product eventually has to deal with retries. A request can fail because the network dropped, the device moved, the server timed out, or the app lost the user’s focus mid-flow. The important question is not whether retries happen. It is how the system handles them without damaging trust.</p>
+      <p>There is a difference between a retry that is clearly safe and a retry that feels reckless. A product that automatically retries without checking state can create duplicate transactions or make the user think the original action succeeded when it did not. That is the kind of issue that destroys confidence fast.</p>
+
+      <h2>The product should know what is queued</h2>
+      <p>When a payment is queued locally, the app should keep enough context to understand what happened, what is still pending, and what the next valid action is. This is not an edge case. It is a normal production pattern in unreliable mobile environments.</p>
+      <p>A robust system can say, “this payment was created offline and is waiting to sync,” or “the request was sent but the confirmation is still pending,” or “the transaction failed locally and can be retried without creating a duplicate.” These messages matter because they reduce ambiguity and help users understand what is going on.</p>
+
+      <h2>Retries are a product decision</h2>
+      <p>One of the easiest ways to lose user trust is to let the app retry silently or aggressively without making the state visible. Users do not like being surprised. They do not like being told a payment succeeded when the service never confirmed it. They do not like guessing whether they should repeat the tap or wait.</p>
+      <p>Good retry logic is careful. It checks if a request was already sent. It uses idempotency keys where possible. It respects the user’s action history. It does not assume that a retry is harmless just because the tap was close. A payment operation is not the same as a simple data fetch. It has money involved, and money changes the design constraints.</p>
+
+      <h2>Clean state beats clever retries</h2>
+      <p>Product teams are often tempted to build “smart” logic that retries aggressively and hopes for the best. This usually creates fragile behavior. The product becomes harder to reason about and easier to break under edge conditions.</p>
+      <p>A better approach is to keep state explicit. Define the transaction lifecycle clearly: created, queued, sent, confirmed, failed, retriable, resolved. Then build the app around those states. That creates better UX and better engineering outcomes. It also makes the system easier to debug when something goes wrong in production.</p>
+
+      <h2>Android Kotlin example</h2>
+      <p>Here is a simple Kotlin example of how a payment action can be modeled with explicit states and a retry path instead of collapsing everything into a single outcome.</p>
+
+      <pre><code>sealed class PaymentState {
+    object Idle : PaymentState()
+    object Queued : PaymentState()
+    object Sending : PaymentState()
+    object Confirmed : PaymentState()
+    data class Failed(val reason: String) : PaymentState()
+}
+
+class PaymentViewModel : ViewModel() {
+    private val _state = MutableStateFlow&lt;PaymentState&gt;(PaymentState.Idle)
+    val state: StateFlow&lt;PaymentState&gt; = _state
+
+    fun processPayment() {
+        _state.value = PaymentState.Queued
+
+        viewModelScope.launch {
+            delay(1000)
+            _state.value = PaymentState.Sending
+            delay(1500)
+
+            val success = true
+            if (success) {
+                _state.value = PaymentState.Confirmed
+            } else {
+                _state.value = PaymentState.Failed("Request timed out. Retry available.")
+            }
+        }
+    }
+}</code></pre>
+
+      <p>That is not a complete payment engine, but it models the important idea: the product should understand the difference between something being queued, being sent, and being confirmed. Without that clarity, retries become dangerous and confusing.</p>
+
+      <blockquote>Trust in payment products is built less by speed and more by clarity when things go wrong.</blockquote>
+
+      <p>When a system can explain where the transaction is, what is still pending, and how the user can recover, it feels dependable. That dependability is what makes people trust the product enough to keep using it in real life.</p>
+    </div>
+  </div>
+</section>

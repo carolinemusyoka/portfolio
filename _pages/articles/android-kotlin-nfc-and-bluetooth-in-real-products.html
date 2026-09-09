@@ -1,0 +1,99 @@
+---
+layout: default
+title: "Android Kotlin, NFC, and Bluetooth in real products"
+permalink: /articles/android-kotlin-nfc-and-bluetooth-in-real-products/
+body_class: portfolio-page article-detail-page
+---
+
+<section class="pf-article-post">
+  <div class="pf-article-post-inner">
+    <a href="{{ '/articles/' | relative_url }}" class="pd-back">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Back to Articles
+    </a>
+
+    <header class="pf-article-header">
+      <div class="pf-article-kicker">ANDROID</div>
+      <h1>Android Kotlin, NFC, and Bluetooth in real products</h1>
+      <div class="pf-article-meta-row">
+        <span>July 2026</span>
+        <span>8 minute read</span>
+      </div>
+    </header>
+
+    <img class="pf-article-cover" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80" alt="Android hardware integration and device connectivity">
+
+    <div class="pf-article-content">
+      <p>In Android products, NFC and Bluetooth are often treated as just ways to connect devices. But behind each one is a very different design assumption. They solve different problems, and they fail differently too.</p>
+      <p>That distinction matters a lot when you are building payment tooling, sales terminals, hardware integrations, or field products that have to work under real conditions.</p>
+
+      <h2>When to use NFC</h2>
+      <p>NFC is for very short range, very intentional interactions. The device and the reader are close together, and the interaction is usually something like tap to pay, card read, or tag detection.</p>
+      <p>This is great for payment flows because it is fast and the user has to be physically close to the device. It reduces accidental reads and keeps the interaction small and specific. There is usually a clear moment when something is about to happen.</p>
+      <p>On Android, NFC works through the device's NFC adapter and the app's foreground dispatch or tag discovery flow. You listen for tag events, read the payload, and decide what to do with it. It is simple in concept, but the details matter because the user experience depends on timing and state.</p>
+
+      <h2>When to use Bluetooth</h2>
+      <p>Bluetooth is for a different class of work. It is built for longer range, discovery, pairing, and ongoing communication between devices. It is common in printers, scanners, headphones, and peripheral accessories.</p>
+      <p>That means the setup is a little more involved. You may need to scan for devices, filter by service UUID, connect to a GATT server, and then handle a stream of data or command responses. Bluetooth is powerful, but it is also less immediate and more stateful.</p>
+      <p>For a product team, the big question is not “which one is better.” It is “which interaction fits the user flow and the hardware model?”</p>
+
+      <h2>Why the differences matter</h2>
+      <p>I have seen product teams choose the wrong transport because the feature sounded similar on the surface. A payment flow and a BLE printer flow both involve “sending data,” but the expectation around speed, proximity, pairing, and recovery is very different.</p>
+      <p>NFC is ideal for one-shot, close-range, intentional actions. Bluetooth is useful for persistent, device-level communication. The app logic should reflect that difference. If you treat them as interchangeable, the product gets messy fast.</p>
+
+      <h2>Android Kotlin example</h2>
+      <p>Here is a small Android Kotlin example showing how a screen can listen for NFC tags and process them when the app is in the foreground.</p>
+
+      <pre><code>override fun onResume() {
+    super.onResume()
+
+    val nfcAdapter = NfcAdapter.getDefaultAdapter(this)
+    if (nfcAdapter == null) return
+
+    val intent = Intent(this, javaClass).apply {
+        addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+    }
+
+    val flags = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+        PendingIntent.FLAG_MUTABLE
+    } else {
+        0
+    }
+
+    val pendingIntent = PendingIntent.getActivity(this, 0, intent, flags)
+    val filters = arrayOf(IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED))
+
+    nfcAdapter.enableForegroundDispatch(this, pendingIntent, filters, null)
+}
+
+override fun onPause() {
+    super.onPause()
+    NfcAdapter.getDefaultAdapter(this)?.disableForegroundDispatch(this)
+}
+
+override fun onNewIntent(intent: Intent) {
+    super.onNewIntent(intent)
+
+    if (intent.action == NfcAdapter.ACTION_TAG_DISCOVERED) {
+        val tag = intent.getParcelableExtra&lt;Tag&gt;(NfcAdapter.EXTRA_TAG) ?: return
+        val techList = tag.techList
+
+        if (techList.any { it == "android.nfc.tech.NfcA" }) {
+            // Read tag payload, parse NDEF, and trigger the next step
+            // in your payment or device flow.
+        }
+    }
+}</code></pre>
+
+      <p>That is a basic pattern, but it is useful because it shows the real design idea. The app is not constantly processing everything. It waits for a clear event, then responds in a controlled way.</p>
+
+      <h2>Bluetooth needs more careful handling</h2>
+      <p>With Bluetooth, there is more lifecycle work to do. You need to think about scanning, pairing, permissions, connection state, and recovery when the peripheral disappears. The app often has to react to lifecycle changes and stale connections without confusing the user.</p>
+      <p>That means the UI and the connection layer need clear state transitions. A device can be scanning, connecting, connected, disconnected, or unavailable. If the app does not define those states well, the user ends up staring at a blank loader or a stale screen while the device is actually alive in the background.</p>
+
+      <blockquote>Good hardware integrations are not about making everything appear magical. They are about making the state visible, predictable, and recoverable.</blockquote>
+
+      <p>When you build with NFC, Bluetooth, and Android Kotlin, the challenge is not just reading data. It is designing a flow that respects the limits of the hardware, the user context, and the reality of the environment.</p>
+    </div>
+  </div>
+</section>
