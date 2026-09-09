@@ -1664,6 +1664,10 @@ img {
   padding: 7rem 0 2rem;
 }
 
+.pf-article-list {
+  padding-bottom: 5rem;
+}
+
 .pf-article-list-inner,
 .pf-article-post-inner {
   max-width: 1100px;
