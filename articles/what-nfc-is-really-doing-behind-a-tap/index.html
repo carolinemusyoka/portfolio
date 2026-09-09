@@ -37,7 +37,6 @@
     <ul class="nav-links">
       <li><a href="/portfolio/">Home</a></li>
       <li><a href="/portfolio/articles/">Articles</a></li>
-      <li><a href="https://carolinemusyoka.github.io">Travel Blog</a></li>
       <li><a href="mailto:carolmusyoka127@gmail.com">Contact</a></li>
     </ul>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
@@ -61,7 +60,7 @@
       <div class="pf-article-kicker">SECURITY</div>
       <h1>What NFC is really doing behind a tap</h1>
       <div class="pf-article-meta-row">
-        <span>September 2026</span>
+        <span>October 2025</span>
         <span>8 minute read</span>
       </div>
     </header>
@@ -69,8 +68,8 @@
     <img class="pf-article-cover" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1400&q=80" alt="NFC interaction and tap-based mobile payment security">
 
     <div class="pf-article-content">
-      <p>People do not usually think about NFC as a security system. They think of it as the reason their phone can tap a terminal and pay for a coffee. But beneath that playful moment is a set of design decisions meant to reduce risk, control exposure, and make the interaction intentional.</p>
-      <p>NFC is short range by design. That matters. It means the user has to be close to the reader, which makes accidental reads less likely and makes a tap feel more deliberate. In payment flows, that little bit of physical proximity is a huge part of the trust model.</p>
+      <p>People do not usually think about NFC as a security system. They think of it as the reason their phone can tap a terminal and pay for a coffee. But underneath that moment is a set of design choices meant to reduce risk, keep exposure small, and make the interaction intentional.</p>
+      <p>NFC is short range by design. That matters. It means the user has to be close to the reader, which makes accidental reads less likely and makes a tap feel more deliberate. In payment flows, that physical proximity is a big part of the trust model.</p>
 
       <h2>Short range is a security feature</h2>
       <p>In many systems, the more distant the communication, the more likely it is to be intercepted or confused with another nearby device. NFC reduces that risk simply by keeping the interaction close. A user physically brings the phone near the terminal, and the connection is bounded by a tight distance.</p>
@@ -83,7 +82,7 @@
 
       <h2>What many teams get wrong</h2>
       <p>A common mistake is treating NFC as a simple “read a tag” event and then expecting the rest of the system to handle everything. In reality, a good NFC flow depends on how the app handles state before, during, and after the read. What if the tag is unreadable? What if the user taps too early or too late? What if the app is in the background? What if the terminal is not the expected one?</p>
-      <p>The solution is not to panic or pile on complexity. It is to model the product around the actual activity: when discovery starts, when a valid tag is detected, how the payload is validated, and what the user sees while the system confirms approval. That makes the flow predictable and much easier to trust.</p>
+      <p>The solution is to model the product around the actual activity: when discovery starts, when a valid tag is detected, how the payload is validated, and what the user sees while the system confirms approval. That makes the flow predictable and much easier to trust.</p>
 
       <h2>Android Kotlin example</h2>
       <p>Here is a small Kotlin example showing how a screen can listen for an NFC tag and respond only when it is a valid device or payment payload.</p>
@@ -118,8 +117,6 @@
 }</code></pre>
 
       <p>This is intentionally basic, but the pattern is useful. It keeps the interaction narrow, controlled, and driven by an actual event. That is a better foundation than trying to scan for every device in the area and hoping the app can sort it out later.</p>
-
-      <blockquote>The trick with NFC is not that it is magical. The trick is that it is designed to be local, limited, and deliberate.</blockquote>
 
       <p>When product teams respect that design, they create flows that are simpler for users and safer by default. That is what makes tap-based experiences feel reliable instead of fragile.</p>
     </div>

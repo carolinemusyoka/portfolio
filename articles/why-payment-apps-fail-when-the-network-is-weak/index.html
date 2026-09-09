@@ -37,7 +37,6 @@
     <ul class="nav-links">
       <li><a href="/portfolio/">Home</a></li>
       <li><a href="/portfolio/articles/">Articles</a></li>
-      <li><a href="https://carolinemusyoka.github.io">Travel Blog</a></li>
       <li><a href="mailto:carolmusyoka127@gmail.com">Contact</a></li>
     </ul>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
@@ -61,7 +60,7 @@
       <div class="pf-article-kicker">PAYMENTS</div>
       <h1>Why payment apps fail when the network is weak</h1>
       <div class="pf-article-meta-row">
-        <span>August 2026</span>
+        <span>August 2025</span>
         <span>9 minute read</span>
       </div>
     </header>
@@ -69,11 +68,11 @@
     <img class="pf-article-cover" src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1400&q=80" alt="Weak mobile signal and payment workflow">
 
     <div class="pf-article-content">
-      <p>One of the biggest mistakes in mobile product work is assuming every failure is a user problem. In payment products, a lot of friction is not caused by poor design at the screen level. It is caused by unstable connectivity at the exact moment the app needs to prove trust, send a request, or confirm a state.</p>
-      <p>I have seen products fail in very ordinary conditions. A merchant is in a busy market with weak data. A customer is using a phone on Wi-Fi calling with poor packet quality. A field agent is trying to confirm a payment while moving between areas with patchy coverage. In all of these cases, the app is not weak because it is missing a button. It is weak because the system is not honest about network reality.</p>
+      <p>One of the biggest mistakes in mobile product work is assuming every failure is a user problem. In payment products, a lot of friction is caused by weak connectivity at the exact moment the app needs to for example, send a request, or confirm a state.</p>
+      <p>I have seen products fail in ordinary conditions. A merchant is in a busy market with weak data. A customer is on Wi-Fi calling with poor quality. A field agent is trying to confirm a payment while moving between areas with patchy coverage. In all of those cases, the app is weak because the system does not respect the actual reality of the network.</p>
 
       <h2>Good products plan for bad signal</h2>
-      <p>When a payment app is built as if a stable connection is guaranteed, every edge case becomes a product failure. The app may show a spinner forever. It may tell the user the payment failed even though the request actually reached the gateway. It may lose state and confuse the merchant, who then has to call support or restart the flow.</p>
+      <p>When an app is built as if a stable connection is guaranteed, every edge case becomes a product failure. The app may show a spinner forever. For example, it may tell the user the payment failed even though the request actually reached the gateway. It may lose state and confuse the merchant, who then has to call support or restart the flow.</p>
       <p>That is not a small issue. In a payment flow, trust is the product. If the app cannot recover with dignity when the connection blinks, users stop trusting it. They start blaming the product when really the system design was the problem.</p>
 
       <h2>What really matters is recovery</h2>
@@ -82,17 +81,17 @@
       <p>That is why offline-first thinking matters so much in merchant and fintech experiences. A user should never lose the context of a sale just because the signal dropped for a few seconds. The app should treat network disruption as a normal real-world condition, not as a rare exception.</p>
 
       <h2>State is a product feature</h2>
-      <p>In many apps, the most important screens are the ones that show transaction state. Not just “pay now,” but “processing,” “sent,” “queued,” “failed,” “retry available,” and “confirming.” These statuses are not just labels. They are a trust layer.</p>
-      <p>When they are missing or unclear, the user has to infer too much. They wonder whether the money left the account, whether the reader accepted the tap, whether the transaction is still in progress, or whether they need to do something again. That uncertainty creates stress, and stress is not a harmless experience issue. It is a product risk.</p>
+      <p>In many apps, the most important screens are the ones that show transaction state. This includes, “processing,” “sent,” “queued,” “failed,” “retry available,” and “confirming.” These statuses act as a trust layer.</p>
+      <p>When they are missing or unclear, the user has to infer too much. They wonder whether the money left the account, whether the reader accepted the tap, whether the transaction is still in progress, or whether they need to do something again. That uncertainty creates stress. </p>
       <p>Product teams should take state seriously from the start. If the app can queue a payment attempt locally, it should keep enough metadata to retry, reconcile, and show the right next action. That makes the product calmer and far more resilient.</p>
 
       <h2>Build for ambiguity, not just success</h2>
       <p>A lot of mobile products are written as though success is the only state worth supporting. Real users live in a world of partial failures, dropped requests, delayed confirmations, and weird device behavior. The product should assume ambiguity and handle it gracefully.</p>
-      <p>The best payment products do not pretend to be perfect. They behave like they understand reality. They let users recover, they explain what is happening, and they protect the transaction path without overloading the user with technical details.</p>
+      <p>The best payment products are definitely not perfect. They let users recover, they explain what is happening, and they protect the transaction path without overloading the user with technical details.</p>
 
       <blockquote>When the network is weak, the quality of a payment product is measured by how well it recovers, not how well it looks on a perfect connection.</blockquote>
 
-      <p>That is the real idea behind dependable mobile product design. We are not building experiences for ideal conditions. We are building them for the places where people actually use them, and those places are often noisy, inconsistent, and imperfect.</p>
+      <p>That is the real idea behind dependable mobile product design. Building experiences for any conditions.</p>
     </div>
   </div>
 </section>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Why offline-first matters in emerging market products — Carol Musyoka</title>
+  <title>Why offline-first matters in Android products — Carol Musyoka</title>
   <meta name="description" content="Senior Android Engineer — building fast, offline-first, user-centered apps.">
   <link rel="icon" href="/portfolio/assets/images/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,9 +12,9 @@
   <link rel="stylesheet" href="/portfolio/assets/css/style.css">
   <link type="application/atom+xml" rel="alternate" href="https://carolinemusyoka.github.io/portfolio/feed.xml" title="Carol Musyoka" />
   <!-- Begin Jekyll SEO tag v2.9.0 -->
-<title>Why offline-first matters in emerging market products | Carol Musyoka</title>
+<title>Why offline-first matters in Android products | Carol Musyoka</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Why offline-first matters in emerging market products" />
+<meta property="og:title" content="Why offline-first matters in Android products" />
 <meta name="author" content="Carol Musyoka" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Senior Android Engineer — building fast, offline-first, user-centered apps." />
@@ -24,9 +24,9 @@
 <meta property="og:site_name" content="Carol Musyoka" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Why offline-first matters in emerging market products" />
+<meta name="twitter:title" content="Why offline-first matters in Android products" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Carol Musyoka"},"description":"Senior Android Engineer — building fast, offline-first, user-centered apps.","headline":"Why offline-first matters in emerging market products","url":"https://carolinemusyoka.github.io/portfolio/articles/why-offline-first-matters/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Carol Musyoka"},"description":"Senior Android Engineer — building fast, offline-first, user-centered apps.","headline":"Why offline-first matters in Android products","url":"https://carolinemusyoka.github.io/portfolio/articles/why-offline-first-matters/"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -37,7 +37,6 @@
     <ul class="nav-links">
       <li><a href="/portfolio/">Home</a></li>
       <li><a href="/portfolio/articles/">Articles</a></li>
-      <li><a href="https://carolinemusyoka.github.io">Travel Blog</a></li>
       <li><a href="mailto:carolmusyoka127@gmail.com">Contact</a></li>
     </ul>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
@@ -58,35 +57,35 @@
     </a>
 
     <header class="pf-article-header">
-      <div class="pf-article-kicker">TOOLS</div>
-      <h1>Why offline-first matters when building fintech and POS tools</h1>
+      <div class="pf-article-kicker">ANDROID</div>
+      <h1>Why offline-first matters in Android products</h1>
       <div class="pf-article-meta-row">
-        <span>April 2026</span>
+        <span>April 2025</span>
         <span>4 minute read</span>
       </div>
     </header>
 
-    <img class="pf-article-cover" src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1400&q=80" alt="Offline-first fintech and POS workflow">
+    <img class="pf-article-cover" src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1400&q=80" alt="Android app workflow with weak connection and offline support">
 
     <div class="pf-article-content">
-      <p>People often think a mobile product is only as good as its interface. In reality, some of the biggest product wins come from how well the app behaves when the network fades, the signal drops, or a terminal disconnects.</p>
-      <p>That is especially true for fintech tools, merchant dashboards, and in-field operations software. In these environments, a weak connection is not an edge case — it is part of the daily reality. A product that depends on constant connectivity will feel unreliable even if the UI is polished.</p>
+      <p>People often think a mobile product is only as good as its interface. In practice, some of the biggest product wins come from how the app behaves when the network fades, the signal drops, or the phone loses connectivity for a few minutes.</p>
+      <p>This is not a payments-only problem. It affects travel apps, sales tools, healthcare apps, internal field software, commerce experiences, and everyday consumer products too. Android users move through real life in places where connectivity is inconsistent. A product that depends on constant network access will feel unreliable even if the UI is polished.</p>
 
       <h2>Connectivity is not guaranteed</h2>
-      <p>Users move between 3G, 4G, Wi-Fi, and disconnected moments during a single day. A robust product needs to handle these transitions without breaking the user flow. Payment tools, inventory tools, and POS-related apps especially need graceful degradation.</p>
-      <p>Offline-first design is not just a technical preference. It is a sign that the product understands real-world constraints and intentionally plans for them.</p>
+      <p>Users move between 3G, 4G, Wi-Fi, airplane mode, and completely disconnected moments during a single day. A strong product needs to handle those transitions without breaking the user flow. A customer checking an itinerary, a field agent updating a job, a nurse reviewing patient details, or a merchant entering a sale should not lose progress just because the network dipped.</p>
+      <p>Offline-first design is not just a technical preference. It is a sign that the product understands the environment people actually use it in and plans for it.</p>
 
       <h2>Protect the critical workflow</h2>
-      <p>For merchant or payment apps, critical tasks might include viewing recent transactions, saving a draft, queueing a sale, or resuming a failed payment attempt. These actions should still work even when the internet is weak. The user should never lose progress because the signal vanished.</p>
-      <p>This creates trust. Users begin to treat the app as dependable rather than fragile. That is often the difference between high adoption and constant drop-off.</p>
+      <p>Every app has a few actions that matter more than the rest. Maybe it is saving a draft, reviewing a ticket, updating inventory, checking a route, or submitting a form. These actions need to keep working even when the internet is weak. The user should never lose their place because the signal vanished.</p>
+      <p>This creates trust. Users begin to treat the app as dependable. That is often the difference between a product people keep using and one they abandon after the first frustrating moment.</p>
 
       <h2>Design for the edge case</h2>
-      <p>Offline-first thinking forces cleaner product decisions. It pushes us to decide what must be available immediately, what can be queued, and what can wait. That often results in more deliberate experiences and stronger product architecture.</p>
-      <p>There is a difference between “the app is online” and “the app is useful.” The second goal is much harder and much more valuable, especially when the user is operating in the field or at a payment counter.</p>
+      <p>Offline-first thinking forces cleaner product decisions. It pushes us to decide what must be available immediately, what can be queued, and what can wait. That usually leads to better user flows, clearer state handling, and more resilient app architecture.</p>
+      <p>There is a difference between “the app is online, working” and “the app is useful.” The latter is harder and much more valuable for sure, especially when the user is moving, traveling, on site, or in a place where connectivity is not dependable.</p>
 
-      <blockquote>The most effective digital products remain useful even when the network does not.</blockquote>
+      <blockquote>The best apps stay useful even when the network does not.</blockquote>
 
-      <p>Offline-first is not about slowing the product down. It is about making the product dependable in the real environment people actually use it in.</p>
+      <p>Offline-first is maintaining dependability in the conditions people are currently in.</p>
     </div>
   </div>
 </section>

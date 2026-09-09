@@ -37,7 +37,6 @@
     <ul class="nav-links">
       <li><a href="/portfolio/">Home</a></li>
       <li><a href="/portfolio/articles/">Articles</a></li>
-      <li><a href="https://carolinemusyoka.github.io">Travel Blog</a></li>
       <li><a href="mailto:carolmusyoka127@gmail.com">Contact</a></li>
     </ul>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
@@ -61,7 +60,7 @@
       <div class="pf-article-kicker">PAYMENTS</div>
       <h1>How payments really work when you tap your phone</h1>
       <div class="pf-article-meta-row">
-        <span>June 2026</span>
+        <span>June 2025</span>
         <span>7 minute read</span>
       </div>
     </header>
@@ -69,12 +68,12 @@
     <img class="pf-article-cover" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1400&q=80" alt="Person holding a black Android smartphone during a contactless payment">
 
     <div class="pf-article-content">
-      <p>Most people see a tap and assume the payment is simple. The phone touches a terminal, a little beep happens, and money moves. In reality, there are a few layers in between, and each one matters if you care about trust, security, and reliability.</p>
-      <p>For the end user, the experience feels instant. For the system behind it, there is a chain of checks, network calls, token exchange, and authorization logic happening in a few hundred milliseconds. That is why product teams need to understand the mechanics, not just the surface behaviour.</p>
+      <p>Most people see a tap and assume the payment is simple. The phone touches a terminal, a little beep happens, and money moves. But there are a few layers in between, and each one matters if you care about trust, security, and reliability.</p>
+      <p>For the user, the experience feels instant. Behind the scenes, there is a chain of checks, network calls, token exchange, and authorization logic happening in a few hundred milliseconds. If you are building payment products, understanding the mechanics matters as much as polishing the UI.</p>
 
       <h2>What actually happens in a tap</h2>
-      <p>When your phone taps a payment terminal, the terminal is not reading your card details in some magical way. It is usually reading a token or a secure credential that has been issued to the wallet or card on the device.</p>
-      <p>That credential is often a digital representation of the card, backed by cryptography and a secure element or trusted platform component. The terminal gets a short-lived token and a cryptographic proof that the transaction is valid. That data is then sent to the payment network, which routes it to the issuer and the acquirer for approval.</p>
+      <p>When your phone taps a payment terminal, the terminal is not reading your card details in some magical way. It is usually reading a token or a secure credential issued to the wallet or card on the device.</p>
+      <p>That credential is a digital version of the card, backed by cryptography and a secure element or trusted platform component. The terminal gets a short-lived token and a cryptographic proof that the transaction is valid. That data is then sent to the payment network, which routes it to the issuer and the acquirer for approval.</p>
       <p>So the app is not just “making a payment.” It is creating a secure, validated transaction record that can be checked, approved, and reconciled later.</p>
 
       <h2>Why tokenization matters</h2>
