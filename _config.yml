@@ -1,6 +1,6 @@
 # Site Settings
 title: "Carol Musyoka"
-description: "Senior Android Engineer — building fast, offline-first, user-centered apps."
+description: "Senior Mobile Engineer — building fast, offline-first, secure mobile apps."
 url: "https://carolinemusyoka.github.io"
 baseurl: "/portfolio"
 email: carolmusyoka127@gmail.com
@@ -9,13 +9,12 @@ favicon: /assets/images/favicon.ico
 # Author
 author:
   name: Carol Musyoka
-  bio: "Senior Android Engineer, multiplatform builder, and clean architecture advocate."
+  bio: "Senior Mobile Engineer, multiplatform builder, and clean architecture advocate."
   avatar: /assets/images/avatar.png
   email: carolmusyoka127@gmail.com
   social:
     twitter: https://twitter.com/carolmusyoka_
     github: https://github.com/carolinemusyoka
-    linkedin: https://www.linkedin.com/in/carol-musyoka/
 
 # Build
 markdown: kramdown
