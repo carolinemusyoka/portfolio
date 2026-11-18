@@ -334,7 +334,7 @@ img {
 
 .pf-hero-name {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 5rem);
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
   font-weight: 400;
   color: #1a1a1a;
   line-height: 1.05;
@@ -440,6 +440,7 @@ img {
   display: flex;
   justify-content: center;
   position: relative;
+  min-height: 220px;
 }
 
 .pf-floating-img {
@@ -465,16 +466,19 @@ img {
 
 .pf-image-badge {
   position: absolute;
-  bottom: 2rem;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   background: #1a1a1a;
   color: #fff;
   padding: 0.5rem 1.2rem;
   border-radius: 50px;
   font-family: 'SF Mono', 'Fira Code', monospace;
   font-size: 0.8rem;
-  white-space: nowrap;
+  max-width: min(420px, calc(100% - 2rem));
+  width: max-content;
+  white-space: normal;
+  text-align: left;
   display: flex;
   align-items: center;
   gap: 0.3rem;

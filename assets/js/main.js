@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Typing effect in hero badge
   const typedEl = document.getElementById('pf-typed');
   if (typedEl) {
-    const extras = [
+    const phrases = [
        'I have a soft spot for Kotlin and a complicated relationship with Bluetooth. It has so much potential, but it can be a pain to work with.',
        'I enjoy the details that make software feel fun.',
        'Building things, breaking things (been learning appsec), and learning, and re-learning, because it never ends.',
