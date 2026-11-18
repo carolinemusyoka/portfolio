@@ -314,14 +314,14 @@ img {
 /* --- Hero --- */
 .pf-hero {
   padding: 10rem 2rem 2rem;
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
 }
 
 .pf-hero-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+  gap: 3rem;
   align-items: center;
 }
 
@@ -372,11 +372,11 @@ img {
 }
 
 .pf-hero-bio {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #555;
-  line-height: 1.7;
+  line-height: 1.65;
   margin-bottom: 1.5rem;
-  max-width: 440px;
+  max-width: 680px;
 }
 
 .pf-hero-bio strong {
@@ -410,6 +410,29 @@ img {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+.pf-education {
+  padding: 4rem 0;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+
+.pf-education-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.pf-education-inner h3 {
+  font-family: var(--font-display);
+  color: #1a1a1a;
+  margin-bottom: 0.35rem;
+}
+
+.pf-education-inner p {
+  color: #777;
 }
 
 /* Hero image — floating, no frame */

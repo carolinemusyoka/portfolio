@@ -34,12 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Typing effect in hero badge
   const typedEl = document.getElementById('pf-typed');
   if (typedEl) {
-    const phrases = [
-      'Hello Hello',
-      'I love Kotlin',
-      'I have been building for Android and Cross-platform',
-      'Shipping to Play Store as well'
-    ];
+    const extras = [
+       'I have a soft spot for Kotlin and a complicated relationship with Bluetooth. It has so much potential, but it can be a pain to work with.',
+       'I enjoy the details that make software feel fun.',
+       'Building things, breaking things (been learning appsec), and learning, and re-learning, because it never ends.',
+       'I like my apps nice-looking, my architecture clean and my coffee... well, no, I love tea.'
+      ];
+
     let phraseIdx = 0;
     let charIdx = 0;
     let deleting = false;
