@@ -320,9 +320,20 @@ img {
 
 .pf-hero-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
-  gap: 3rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
   align-items: center;
+}
+
+.pf-hero-text {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 820px;
+}
+
+.pf-hero-role,
+.pf-hero-actions {
+  justify-content: center;
 }
 
 .pf-hero-greeting {
@@ -374,9 +385,10 @@ img {
 .pf-hero-bio {
   font-size: 0.9rem;
   color: #555;
-  line-height: 1.65;
+  line-height: 1.8;
   margin-bottom: 1.5rem;
-  max-width: 680px;
+  max-width: 820px;
+  text-align: center;
 }
 
 .pf-hero-bio strong {
@@ -384,27 +396,6 @@ img {
   font-weight: 600;
 }
 
-.pf-hero-values {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 2rem;
-}
-
-.pf-hero-values li {
-  position: relative;
-  padding-left: 1.5rem;
-  font-size: 0.9rem;
-  color: #444;
-  line-height: 1.8;
-}
-
-.pf-hero-values li::before {
-  content: '\2713';
-  position: absolute;
-  left: 0;
-  color: #1a1a1a;
-  font-weight: 700;
-}
 
 .pf-hero-actions {
   display: flex;
@@ -435,14 +426,6 @@ img {
   color: #777;
 }
 
-/* Hero image — floating, no frame */
-.pf-hero-image {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  min-height: 220px;
-}
-
 .pf-floating-img {
   width: 420px;
   height: auto;
@@ -464,40 +447,6 @@ img {
   50% { transform: translateY(-10px); }
 }
 
-.pf-image-badge {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #1a1a1a;
-  color: #fff;
-  padding: 0.5rem 1.2rem;
-  border-radius: 50px;
-  font-family: 'SF Mono', 'Fira Code', monospace;
-  font-size: 0.8rem;
-  max-width: min(420px, calc(100% - 2rem));
-  width: max-content;
-  white-space: normal;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  z-index: 2;
-}
-
-.pf-typed-text {
-  color: #fff;
-}
-
-.pf-cursor {
-  color: #fff;
-  animation: pf-blink 1s step-end infinite;
-  font-weight: 300;
-}
-
-@keyframes pf-blink {
-  50% { opacity: 0; }
-}
 
 /* Hero stats */
 .pf-hero-stats {
@@ -755,7 +704,7 @@ img {
   margin: 0 auto;
   padding: 0 2rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
@@ -1257,14 +1206,6 @@ img {
     gap: 2rem;
   }
 
-  .pf-hero-text {
-    order: 2;
-  }
-
-  .pf-hero-image {
-    order: 1;
-  }
-
   .pf-hero-bio {
     max-width: 100%;
   }
@@ -1277,10 +1218,6 @@ img {
     justify-content: center;
   }
 
-  .pf-hero-values {
-    text-align: left;
-    display: inline-block;
-  }
 
   .pf-floating-img {
     width: 300px;
@@ -1410,6 +1347,16 @@ img {
   color: #1a1a1a;
   opacity: 0.2;
   margin-left: 0.5rem;
+}
+
+.pf-arrow-wip {
+  margin: 0.5rem 0 0;
+  transform: rotate(8deg);
+}
+
+.pf-arrow-subtle {
+  opacity: 0.12;
+  margin-top: 0.35rem;
 }
 
 /* Section header arrows */
@@ -1842,7 +1789,6 @@ img {
 .pf-hero-name { animation-delay: 0.25s; }
 .pf-hero-role { animation-delay: 0.4s; }
 .pf-hero-bio { animation-delay: 0.55s; }
-.pf-hero-values { animation-delay: 0.65s; }
 .pf-hero-actions { animation-delay: 0.8s; }
 
 @keyframes pf-reveal {
@@ -1850,13 +1796,6 @@ img {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Hero image pop-in */
-.pf-hero-image {
-  opacity: 0;
-  transform: scale(0.9);
-  animation: pf-pop 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
 }
 
 @keyframes pf-pop {

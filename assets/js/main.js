@@ -31,53 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Portfolio page animations ---
-  // Typing effect in hero badge
-  const typedEl = document.getElementById('pf-typed');
-  if (typedEl) {
-    const phrases = [
-       'I have a soft spot for Kotlin and a complicated relationship with Bluetooth. It has so much potential, but it can be a pain to work with.',
-       'I enjoy the details that make software feel fun.',
-       'Building things, breaking things (been learning appsec), and learning, and re-learning, because it never ends.',
-       'I like my apps nice-looking, my architecture clean and my coffee... well, no, I love tea.'
-      ];
-
-    let phraseIdx = 0;
-    let charIdx = 0;
-    let deleting = false;
-    let pauseTime = 0;
-
-    const typeLoop = () => {
-      const current = phrases[phraseIdx];
-      if (!deleting) {
-        typedEl.textContent = current.substring(0, charIdx + 1);
-        charIdx++;
-        if (charIdx === current.length) {
-          deleting = true;
-          pauseTime = 2200;
-        } else {
-          pauseTime = 70 + Math.random() * 40;
-        }
-      } else {
-        typedEl.textContent = current.substring(0, charIdx - 1);
-        charIdx--;
-        if (charIdx === 0) {
-          deleting = false;
-          phraseIdx = (phraseIdx + 1) % phrases.length;
-          pauseTime = 500;
-        } else {
-          pauseTime = 35;
-        }
-      }
-      setTimeout(typeLoop, pauseTime);
-    };
-    setTimeout(typeLoop, 800);
-  }
-
   // Portfolio stat counters
   const pfStats = document.querySelectorAll('.pf-stat-num');
   if (pfStats.length && 'IntersectionObserver' in window) {
     const animatePfCounter = (el) => {
       const target = parseInt(el.dataset.target, 10);
+      if (target === 6) {
+        el.textContent = target;
+        return;
+      }
       const duration = 1800;
       const start = performance.now();
       const step = (ts) => {
